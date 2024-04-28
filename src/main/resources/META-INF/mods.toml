@@ -1,0 +1,29 @@
+modLoader="javafml"
+loaderVersion="[46,)"
+license="LGPL"
+issueTrackerURL="https://github.com/Viola-Siemens/Breeding-Potion/issues"
+
+[[mods]]
+modId="breedingpotion"
+version="${file.jarVersion}"
+displayName="Breeding Potion"
+logoFile="logo.png"
+credits="Liu Dongyu, Blue_rose"
+authors="Hexagram"
+description='''
+This is a lightweight mod which only adds a potion to breed mobs.
+'''
+
+[[dependencies.breedingpotion]]
+    modId="forge"
+    mandatory=true
+    versionRange="[46,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.breedingpotion]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.20,1.21)"
+    ordering="NONE"
+    side="BOTH"
