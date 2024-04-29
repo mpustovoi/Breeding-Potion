@@ -1,9 +1,12 @@
 package com.hexagram2021.breedingpotion.common.brew;
 
+import com.hexagram2021.breedingpotion.common.config.BPCommonConfig;
+import com.hexagram2021.breedingpotion.common.register.BPPotions;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.alchemy.PotionUtils;
+import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.common.brewing.BrewingRecipe;
@@ -11,7 +14,7 @@ import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 
 public final class BPBrewingRecipes {
 	public static void init() {
-		//TODO addFullRecipeWithoutStronger(Potions.STRONG_HEALING, BPCommonConfig.getBrewingIngredient(), BPPotions.BREEDING, BPPotions.LONG_BREEDING);
+		addFullRecipeWithoutStronger(Potions.STRONG_HEALING, BPCommonConfig.getBrewingIngredient(), BPPotions.BREEDING, BPPotions.LONG_BREEDING);
 	}
 
 	private BPBrewingRecipes() {
