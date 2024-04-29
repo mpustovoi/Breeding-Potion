@@ -12,7 +12,7 @@ public final class BPPotions {
 	public static final ResourceLocation ID_LONG_BREEDING_POTION = new ResourceLocation(MODID, "long_breeding");
 
 	public static final Potion BREEDING = new Potion(ID_BREEDING_POTION.getPath(), new MobEffectInstance(BPMobEffects.BREEDING, 900));
-	public static final Potion LONG_BREEDING = new Potion(ID_LONG_BREEDING_POTION.getPath(), new MobEffectInstance(BPMobEffects.BREEDING, 1800));
+	public static final Potion LONG_BREEDING = new Potion(ID_BREEDING_POTION.getPath(), new MobEffectInstance(BPMobEffects.BREEDING, 1800));
 
 	private BPPotions() {
 	}

@@ -1,0 +1,13 @@
+{
+  "language": "Chinese",
+  "language.code": "zh_cn",
+  "language.region": "China",
+
+  "effect.breedingpotion.breeding": "繁殖",
+
+  "item.minecraft.potion.effect.breeding": "繁殖药水",
+  "item.minecraft.splash_potion.effect.breeding": "喷溅型繁殖药水",
+  "item.minecraft.lingering_potion.effect.breeding": "滞留型繁殖药水",
+
+  "item.minecraft.tipped_arrow.effect.breeding": "繁殖之箭"
+}

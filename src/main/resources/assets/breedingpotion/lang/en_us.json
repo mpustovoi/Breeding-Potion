@@ -1,0 +1,13 @@
+{
+  "language": "English",
+  "language.code": "en_us",
+  "language.region": "United States",
+
+  "effect.breedingpotion.breeding": "Breeding",
+
+  "item.minecraft.potion.effect.breeding": "Potion of Breeding",
+  "item.minecraft.splash_potion.effect.breeding": "Splash Potion of Breeding",
+  "item.minecraft.lingering_potion.effect.breeding": "Lingering Potion of Breeding",
+
+  "item.minecraft.tipped_arrow.effect.breeding": "Arrow of Breeding"
+}
