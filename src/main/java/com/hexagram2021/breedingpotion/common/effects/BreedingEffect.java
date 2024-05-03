@@ -13,22 +13,29 @@ public class BreedingEffect extends MobEffect {
 	}
 
 	@Override
-	public void applyEffectTick(LivingEntity entity, int amplifier) {	//TODO: buggy
+	public boolean isDurationEffectTick(int duration, int amplifier) {
+		int k = 80 >> amplifier;
+		if (k > 0) {
+			return duration % k == 0;
+		}
+		return true;
+	}
+
+	@Override
+	public void applyEffectTick(LivingEntity entity, int amplifier) {
 		if (entity.level().isClientSide) {
 			return;
 		}
-		if (entity.getHealth() < entity.getMaxHealth() && entity.level().getRandom().nextInt(5) <= amplifier) {
-			if(entity instanceof Player player) {
-				player.getFoodData().eat(1, 1.0F);
-			} else {
-				entity.heal(1.0F);
-			}
+		if(entity instanceof Player player) {
+			player.getFoodData().eat(1, 1.0F);
+		} else if (entity.getHealth() < entity.getMaxHealth()) {
+			entity.heal(1.0F);
 		}
 		if(entity instanceof Animal animal) {
 			if(animal.getAge() == 0 && animal.canFallInLove()) {
 				animal.setInLove(null);
 			}
-		} else if(entity instanceof Villager villager && villager.getAge() == 0 && entity.level().getRandom().nextInt(5) <= amplifier) {
+		} else if(entity instanceof Villager villager && villager.getAge() == 0) {
 			villager.foodLevel += 1;
 		}
 	}
