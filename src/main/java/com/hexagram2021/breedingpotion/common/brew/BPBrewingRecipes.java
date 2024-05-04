@@ -14,20 +14,29 @@ import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 
 public final class BPBrewingRecipes {
 	public static void init() {
-		addFullRecipeWithoutStronger(Potions.STRONG_HEALING, BPCommonConfig.getBrewingIngredient(), BPPotions.BREEDING, BPPotions.LONG_BREEDING);
+		addFullRecipe(
+				Potions.REGENERATION, Potions.LONG_REGENERATION, Potions.STRONG_REGENERATION,
+				BPCommonConfig.getBrewingIngredient(),
+				BPPotions.BREEDING, BPPotions.LONG_BREEDING, BPPotions.STRONG_BREEDING
+		);
 	}
 
 	private BPBrewingRecipes() {
 	}
 
 	@SuppressWarnings("SameParameterValue")
-	private static void addFullRecipeWithoutStronger(Potion input, ItemLike add, Potion origin, Potion longer) {
+	private static void addFullRecipe(Potion input, Potion inputLonger, Potion inputStronger, ItemLike add, Potion origin, Potion longer, Potion stronger) {
 		addRecipe(input, add, origin);
+		addRecipe(inputLonger, add, longer);
+		addRecipe(inputStronger, add, stronger);
 		addProlongRecipe(origin, longer);
+		addStrengthenRecipe(origin, stronger);
 	}
-
 	private static void addProlongRecipe(Potion origin, Potion longer) {
 		addRecipe(origin, Items.REDSTONE, longer);
+	}
+	private static void addStrengthenRecipe(Potion origin, Potion stronger) {
+		addRecipe(origin, Items.GLOWSTONE_DUST, stronger);
 	}
 
 	private static void addRecipe(Potion input, ItemLike add, Potion output) {

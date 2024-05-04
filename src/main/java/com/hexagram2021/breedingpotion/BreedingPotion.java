@@ -24,6 +24,6 @@ public class BreedingPotion {
 	}
 
 	public void setup(FMLCommonSetupEvent event) {
-		BPBrewingRecipes.init();
+		event.enqueueWork(BPBrewingRecipes::init);
 	}
 }
